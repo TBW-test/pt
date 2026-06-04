@@ -205,19 +205,14 @@
   <div class="border border-stroke rounded-[6px] overflow-hidden flex flex-col">
 
     <!-- Filter bar -->
-    <div class="bg-surface-200 flex items-center justify-between px-2 py-3">
-      <button class="flex items-center gap-2 h-10 px-2 border border-ink-muted rounded-[6px] bg-white text-sm font-medium text-ink cursor-pointer">
-        <img src="img/icons/icon-filter.svg" width="16" height="16" alt="">
-        Angebote filtern
-      </button>
+    <div class="bg-surface-200 flex items-center justify-end px-2 py-3">
       <div class="flex flex-col gap-2 items-end self-stretch justify-between">
         <div class="flex items-center gap-1 text-sm text-ink">
-          <span>Preis inkl. Versand</span>
-          <div class="toggle w-[40px] h-[20px] rounded-[10px] bg-ink-weak relative cursor-pointer shrink-0"></div>
-        </div>
-        <div class="flex items-center gap-1 text-sm text-ink">
-          <span>Sofort lieferbar</span>
-          <div class="toggle w-[40px] h-[20px] rounded-[10px] bg-ink-weak relative cursor-pointer shrink-0"></div>
+          <span>Sortieren nach: </span>
+          <select class="price-sort px-2 py-2 flex border-[#67829D] border border-stroke rounded-md text-sm cursor-pointer bg-white">
+            <option>Preis</option>
+            <option>Gesamtpreis</option>
+          </select>
         </div>
       </div>
     </div>
