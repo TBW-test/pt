@@ -2237,7 +2237,9 @@ function renderProduct() {
 
   var offerHtml = '';
   P.offers.forEach(function (o, i) {
-    offerHtml += '<div class="offer-item border-t border-stroke p-2">' +
+    var isFirst = i === 0;
+    offerHtml += '<div class="offer-item border-t border-stroke p-2' + (isFirst ? ' relative' : '') + '">' +
+      (isFirst ? '<span style="position:absolute;top:0;right:0;background:#0066CC;color:white;font-size:14px;font-weight:500;padding:2px 8px;border-radius:0 0 0 4px;">Bestes Angebot</span>' : '') +
       '<div class="flex gap-[10px] items-start">' +
         '<div class="flex flex-col gap-1.5 flex-1 min-w-0">' +
           '<div class="h-9 w-[88px]"><img src="' + o.shopLogo + '" class="w-full max-h-[25px] object-contain object-left" alt="' + o.shopAlt + '"></div>' +
@@ -2252,7 +2254,7 @@ function renderProduct() {
             '</div>' +
           '</div>' +
         '</div>' +
-        '<div class="flex flex-col items-end w-[100px] shrink-0 self-stretch text-right">' +
+        '<div class="flex flex-col items-end w-[100px] shrink-0 self-stretch text-right" style="' + (isFirst ? 'padding-top:22px;' : '') + '">' +
           '<span class="text-[20px] font-semibold text-ink leading-[1.2] whitespace-nowrap">' + o.price + ' €</span>' +
           '<span class="text-[11px] font-medium text-ink-weak leading-[1.4] whitespace-nowrap">' + o.shipping + '</span>' +
           '<div class="mt-auto flex items-start gap-1 text-[12px] text-ink">' +
