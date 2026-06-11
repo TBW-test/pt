@@ -2200,6 +2200,70 @@ function setText(id, val) { var el = document.getElementById(id); if (el) el.tex
 function setHTML(id, val) { var el = document.getElementById(id); if (el) el.innerHTML    = val; }
 function setAttr(id, attr, val) { var el = document.getElementById(id); if (el) el[attr] = val; }
 
+function parseEuro(str) {
+  return parseFloat(str.replace(',', '.'));
+}
+
+function parseShippingCost(str) {
+  var m = str.match(/(\d+),(\d+)/);
+  return m ? parseFloat(m[1] + '.' + m[2]) : 0;
+}
+
+function formatEuro(num) {
+  return num.toFixed(2).replace('.', ',');
+}
+
+function renderOffers(mode) {
+  var items = PRODUCT.offers.map(function (o, i) {
+    var basePrice    = parseEuro(o.price);
+    var shippingCost = parseShippingCost(o.shipping);
+    return { o: o, origIdx: i, basePrice: basePrice, total: basePrice + shippingCost };
+  });
+
+  if (mode === 'Gesamtpreis') {
+    items.sort(function (a, b) { return a.total - b.total; });
+  } else {
+    items.sort(function (a, b) { return a.basePrice - b.basePrice; });
+  }
+
+  var html = '';
+  items.forEach(function (item, i) {
+    var o            = item.o;
+    var isFirst      = i === 0;
+    var displayPrice = mode === 'Gesamtpreis' ? formatEuro(item.total) : o.price;
+    var displayShip  = mode === 'Gesamtpreis' ? o.shipping.replace('zzgl.', 'inkl.') : o.shipping;
+
+    html += '<div class="offer-item border-t border-stroke p-2' + (isFirst ? ' relative' : '') + '">' +
+      (isFirst ? '<span style="position:absolute;top:0;right:0;background:#0066CC;color:white;font-size:14px;font-weight:500;padding:2px 8px;border-radius:0 0 0 4px;">Bestes Angebot</span>' : '') +
+      '<div class="flex gap-[10px] items-start">' +
+        '<div class="flex flex-col gap-1.5 flex-1 min-w-0">' +
+          '<div class="h-9 w-[88px]"><img src="' + o.shopLogo + '" class="w-full max-h-[25px] object-contain object-left" alt="' + o.shopAlt + '"></div>' +
+          '<div class="flex gap-2 items-start">' +
+            '<div class="w-[40px] shrink-0 flex items-center justify-center"><img src="' + o.thumb + '" class="max-w-full max-h-[40px] object-contain" alt=""></div>' +
+            '<div class="flex flex-col gap-2 justify-between self-stretch flex-1 min-w-0">' +
+              '<p class="text-[12px] font-semibold text-link leading-[1.3] cursor-pointer">' + o.title + '</p>' +
+              '<div class="flex items-center gap-1" data-offer="' + item.origIdx + '" style="cursor:pointer;">' +
+                '<img src="img/icons/icon-info-link.svg" width="16" height="16" alt="">' +
+                '<span class="text-[12px] text-link underline">Details</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="flex flex-col items-end w-[100px] shrink-0 self-stretch text-right" style="' + (isFirst ? 'padding-top:22px;' : '') + '">' +
+          '<span class="text-[20px] font-semibold text-ink leading-[1.2] whitespace-nowrap">' + displayPrice + ' €</span>' +
+          '<span class="text-[11px] font-medium text-ink-weak leading-[1.4] whitespace-nowrap">' + displayShip + '</span>' +
+          '<div class="mt-auto flex items-start gap-1 text-[12px] text-ink">' +
+            '<img src="' + o.truckIcon + '" width="16" height="16" class="shrink-0 mt-px" alt="">' +
+            '<span class="text-left leading-[1.3]">' + o.delivery + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  });
+
+  document.getElementById('offer-list').innerHTML = html;
+}
+
 function renderProduct() {
   var P = PRODUCT;
 
@@ -2242,38 +2306,7 @@ function renderProduct() {
 
   // ── Preisvergleich ────────────────────────────────────────────────────────
   setText('price-range-text', P.priceRange);
-
-  var offerHtml = '';
-  P.offers.forEach(function (o, i) {
-    var isFirst = i === 0;
-    offerHtml += '<div class="offer-item border-t border-stroke p-2' + (isFirst ? ' relative' : '') + '">' +
-      (isFirst ? '<span style="position:absolute;top:0;right:0;background:#0066CC;color:white;font-size:14px;font-weight:500;padding:2px 8px;border-radius:0 0 0 4px;">Bestes Angebot</span>' : '') +
-      '<div class="flex gap-[10px] items-start">' +
-        '<div class="flex flex-col gap-1.5 flex-1 min-w-0">' +
-          '<div class="h-9 w-[88px]"><img src="' + o.shopLogo + '" class="w-full max-h-[25px] object-contain object-left" alt="' + o.shopAlt + '"></div>' +
-          '<div class="flex gap-2 items-start">' +
-            '<div class="w-[40px] shrink-0 flex items-center justify-center"><img src="' + o.thumb + '" class="max-w-full max-h-[40px] object-contain" alt=""></div>' +
-            '<div class="flex flex-col gap-2 justify-between self-stretch flex-1 min-w-0">' +
-              '<p class="text-[12px] font-semibold text-link leading-[1.3] cursor-pointer">' + o.title + '</p>' +
-              '<div class="flex items-center gap-1" data-offer="' + i + '" style="cursor:pointer;">' +
-                '<img src="img/icons/icon-info-link.svg" width="16" height="16" alt="">' +
-                '<span class="text-[12px] text-link underline">Details</span>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="flex flex-col items-end w-[100px] shrink-0 self-stretch text-right" style="' + (isFirst ? 'padding-top:22px;' : '') + '">' +
-          '<span class="text-[20px] font-semibold text-ink leading-[1.2] whitespace-nowrap">' + o.price + ' €</span>' +
-          '<span class="text-[11px] font-medium text-ink-weak leading-[1.4] whitespace-nowrap">' + o.shipping + '</span>' +
-          '<div class="mt-auto flex items-start gap-1 text-[12px] text-ink">' +
-            '<img src="' + o.truckIcon + '" width="16" height="16" class="shrink-0 mt-px" alt="">' +
-            '<span class="text-left leading-[1.3]">' + o.delivery + '</span>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
-  });
-  setHTML('offer-list', offerHtml);
+  renderOffers('Preis');
 
   // ── Preisentwicklung ──────────────────────────────────────────────────────
   setText('pe-discount', P.discount);
@@ -2466,6 +2499,11 @@ function renderProduct() {
 renderProduct();
 document.body.style.visibility = 'visible';
 document.body.style.opacity = '1';
+
+// Price sort
+document.querySelector('.price-sort').addEventListener('change', function () {
+  renderOffers(this.value);
+});
 
 // Hero zoom button
 document.getElementById('hero-zoom-btn').addEventListener('click', function () {
