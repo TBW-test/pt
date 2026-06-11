@@ -106,9 +106,14 @@
     </div>
 
     <!-- Sale badge -->
-    <div class="absolute left-0 top-2 bg-link flex items-center gap-1 px-2 py-1 rounded-tr-[20px] rounded-br-[20px] z-10">
+    <div class="absolute left-0 top-2 bg-link flex items-center gap-1 px-2 py-1 rounded-tr-[20px] rounded-br-[20px] z-10" style="position:absolute;">
       <span id="hero-discount" class="text-sm font-medium text-white whitespace-nowrap">-25%</span>
-      <span class="w-4 h-4 rounded-full border border-white flex items-center justify-center text-white text-[9px] font-medium leading-none shrink-0">?</span>
+      <span id="hero-discount-info" class="w-4 h-4 rounded-full border border-white flex items-center justify-center text-white text-[9px] font-medium leading-none shrink-0 cursor-pointer">?</span>
+      <div id="hero-discount-tooltip" style="display:none;position:absolute;top:calc(100% + 8px);left:0;width:230px;background:white;border:1px solid #c8dff2;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.12);padding:10px 12px;z-index:100;">
+        <button id="hero-discount-tooltip-close" style="position:absolute;top:6px;right:8px;background:none;border:none;cursor:pointer;font-size:14px;color:#666;line-height:1;padding:0;">×</button>
+        <p style="font-size:13px;color:#1a1a1a;line-height:1.4;margin:0;padding-right:16px;">Ersparnis gegenüber dem besten Durchschnittspreis der letzten 60 Tage</p>
+        <div style="position:absolute;top:-6px;left:14px;width:10px;height:10px;background:white;border-left:1px solid #c8dff2;border-top:1px solid #c8dff2;transform:rotate(45deg);"></div>
+      </div>
     </div>
   </div>
 
@@ -2394,6 +2399,31 @@ function renderProduct() {
 
 // Run once DOM is ready (scripts at bottom of body, so DOM is already ready)
 renderProduct();
+
+// Sale badge tooltip
+(function () {
+  var info    = document.getElementById('hero-discount-info');
+  var tooltip = document.getElementById('hero-discount-tooltip');
+  var close   = document.getElementById('hero-discount-tooltip-close');
+
+  info.addEventListener('click', function (e) {
+    e.stopPropagation();
+    tooltip.style.display = tooltip.style.display === 'none' ? 'block' : 'none';
+  });
+
+  close.addEventListener('click', function (e) {
+    e.stopPropagation();
+    tooltip.style.display = 'none';
+  });
+
+  document.addEventListener('click', function () {
+    tooltip.style.display = 'none';
+  });
+
+  tooltip.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+})();
 </script>
 </body>
 </html>
