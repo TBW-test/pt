@@ -31,7 +31,7 @@
     }
   </script>
 </head>
-<body class="font-sans text-sm text-ink bg-surface-default">
+<body class="font-sans text-sm text-ink bg-surface-default" style="visibility:hidden;opacity:0;transition:opacity 0.15s ease;">
 
 <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
 <header>
@@ -2464,6 +2464,8 @@ function renderProduct() {
 
 // Run once DOM is ready (scripts at bottom of body, so DOM is already ready)
 renderProduct();
+document.body.style.visibility = 'visible';
+document.body.style.opacity = '1';
 
 // Hero zoom button
 document.getElementById('hero-zoom-btn').addEventListener('click', function () {
