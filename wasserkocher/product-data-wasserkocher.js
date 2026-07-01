@@ -12,7 +12,7 @@ var PRODUCT = {
   bestPriceShop: { logo: 'img/logo-amazon.gif', alt: 'Amazon', shipping: 'Versand: 0,00€' },
   offerListCount:  7,
   totalOfferCount: 7,
-  priceRange: 'ab 32,30 € bis 36,90 €',
+  priceRange: '7 Angebote ab 32,30 € bis 36,90 €',
   discount:   '-15%',
   savings:    { percent: 15, amount: '5,70' },
 
