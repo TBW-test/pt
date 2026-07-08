@@ -200,31 +200,183 @@
 	"buffers":
 	[
 		{
-			"file": "kaffeemaschine/index.html",
-			"settings":
-			{
-				"buffer_size": 136969,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "kaffeemaschine/product-data-kaffee.js",
-			"settings":
-			{
-				"buffer_size": 13136,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "wasserkocher/index.html",
 			"settings":
 			{
-				"buffer_size": 131826,
+				"buffer_size": 134761,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
+			},
+			"undo_stack":
+			[
+				[
+					100,
+					1,
+					"paste",
+					null,
+					"AQAAAPMUAAAAAAAAARUAAAAAAAAJAAAAQmVzdHByZWlz",
+					"AQAAAAAAAAABAAAA8xQAAAAAAAD8FAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					110,
+					1,
+					"insert",
+					{
+						"characters": " ()"
+					},
+					"AwAAAL7aAQAAAAAAv9oBAAAAAAAAAAAAv9oBAAAAAADA2gEAAAAAAAAAAADA2gEAAAAAAMHaAQAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAvtoBAAAAAAC+2gEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					116,
+					1,
+					"paste_and_indent",
+					null,
+					"AQAAAMDaAQAAAAAAyNoBAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAwNoBAAAAAADA2gEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					117,
+					1,
+					"insert",
+					{
+						"characters": ","
+					},
+					"AQAAAMjaAQAAAAAAydoBAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAyNoBAAAAAADI2gEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					118,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAMnaAQAAAAAAytoBAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAydoBAAAAAADJ2gEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					123,
+					1,
+					"paste_and_indent",
+					null,
+					"AQAAAMraAQAAAAAA2toBAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAytoBAAAAAADK2gEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					124,
+					1,
+					"insert",
+					{
+						"characters": "..."
+					},
+					"AwAAANraAQAAAAAA29oBAAAAAAAAAAAA29oBAAAAAADc2gEAAAAAAAAAAADc2gEAAAAAAN3aAQAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA2toBAAAAAADa2gEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					139,
+					1,
+					"paste",
+					null,
+					"AQAAAGHoAQAAAAAAgOgBAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYegBAAAAAABh6AEAAAAAAAAAAAAAAPC/"
+				],
+				[
+					142,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAGHoAQAAAAAAYugBAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYegBAAAAAABh6AEAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "wasserkocher/product-data-wasserkocher.js",
+			"redo_stack":
+			[
+				[
+					30,
+					1,
+					"insert",
+					{
+						"characters": "0"
+					},
+					"AQAAALgzAAAAAAAAuTMAAAAAAAABAAAAMA",
+					"AQAAAAAAAAABAAAAuTMAAAAAAAC5MwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					27,
+					1,
+					"insert",
+					{
+						"characters": "0"
+					},
+					"AQAAABszAAAAAAAAHTMAAAAAAAABAAAAMA",
+					"AQAAAAAAAAABAAAAHDMAAAAAAAAcMwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					23,
+					1,
+					"insert",
+					{
+						"characters": "0"
+					},
+					"AQAAAH4yAAAAAAAAgDIAAAAAAAABAAAAMA",
+					"AQAAAAAAAAABAAAAfzIAAAAAAAB/MgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					20,
+					1,
+					"insert",
+					{
+						"characters": "0"
+					},
+					"AQAAAOExAAAAAAAA4zEAAAAAAAABAAAAMA",
+					"AQAAAAAAAAABAAAA4jEAAAAAAADiMQAAAAAAAAAAAAAAAPC/"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 13256,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					9,
+					1,
+					"insert",
+					{
+						"characters": "7"
+					},
+					"AQAAAD8CAAAAAAAAQAIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAPwIAAAAAAAA/AgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					10,
+					1,
+					"insert",
+					{
+						"characters": " Angebote"
+					},
+					"CQAAAEACAAAAAAAAQQIAAAAAAAAAAAAAQQIAAAAAAABCAgAAAAAAAAAAAABCAgAAAAAAAEMCAAAAAAAAAAAAAEMCAAAAAAAARAIAAAAAAAAAAAAARAIAAAAAAABFAgAAAAAAAAAAAABFAgAAAAAAAEYCAAAAAAAAAAAAAEYCAAAAAAAARwIAAAAAAAAAAAAARwIAAAAAAABIAgAAAAAAAAAAAABIAgAAAAAAAEkCAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAQAIAAAAAAABAAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAEkCAAAAAAAASgIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAASQIAAAAAAABJAgAAAAAAAAAAAAAAAPC/"
+				]
+			]
 		}
 	],
 	"build_system": "",
@@ -302,6 +454,7 @@
 	],
 	"file_history":
 	[
+		"/Users/gwendal.vernay/Documents/Claude/pt/kaffeemaschine/index.html",
 		"/Users/gwendal.vernay/Documents/Claude/pt/strategie tag/prototyp-wasserkocher.html",
 		"/Users/gwendal.vernay/Documents/Claude/prototypes/strategie tag/css/styles.css",
 		"/Users/gwendal.vernay/Documents/Claude/prototypes/strategie tag/product-data-wasserkocher.js",
@@ -406,7 +559,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -420,6 +573,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Ergebnis aus ",
+			"Ergebnis aus 3 Quellen",
+			"Datenblatt",
+			"Bosch TWK7403 ComfortLine",
+			"Preisver",
+			" Sale badge ",
 			"offer-details-shop",
 			"zum sh",
 			"zum s",
@@ -464,20 +623,20 @@
 			[
 				{
 					"buffer": 0,
-					"file": "kaffeemaschine/index.html",
+					"file": "wasserkocher/index.html",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 136969,
+						"buffer_size": 134761,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109195,
-								109195
+								125319,
+								125319
 							]
 						],
 						"settings":
@@ -487,7 +646,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 29887.0,
+						"translation.y": 34565.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -496,19 +655,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "kaffeemaschine/product-data-kaffee.js",
-					"semi_transient": true,
+					"file": "wasserkocher/product-data-wasserkocher.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13136,
+						"buffer_size": 13256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7790,
-								7792
+								11166,
+								11166
 							]
 						],
 						"settings":
@@ -517,39 +676,8 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 517.0,
-						"translation.y": 1977.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "wasserkocher/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 131826,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								101032,
-								101032
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
 						"translation.x": 0.0,
-						"translation.y": 27817.0,
+						"translation.y": 2393.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
