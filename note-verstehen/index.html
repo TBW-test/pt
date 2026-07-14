@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Note verstehen – Testberichte.de</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <script src="js/sub-navigation.js" defer></script>
+  <script src="js/product-gallery.js" defer></script>
+  <script src="js/offers.js" defer></script>
+  <script src="js/price-chart.js" defer></script>
+  <script src="js/carousels.js" defer></script>
+  <script src="js/datasheet.js" defer></script>
+</head>
+<body class="font-sans text-sm text-ink bg-surface-default">
+
+<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+<header>
+  <nav class="flex items-center h-[50px] px-1 bg-white shadow-hero" aria-label="Hauptnavigation">
+    <div class="w-[46px] h-[46px] flex items-center justify-center cursor-pointer shrink-0" aria-label="Menü">
+      <img src="img/icons/icon-menu.svg" width="32" height="32" alt="">
+    </div>
+    <div class="flex-1 pl-1 flex items-center">
+      <img src="img/logo.svg" alt="Testberichte" width="142" height="22" class="block" />
+    </div>
+    <div class="flex">
+      <div class="w-[46px] h-[46px] flex items-center justify-center cursor-pointer">
+        <img src="img/icons/icon-heart-primary.svg" width="32" height="32" alt="">
+      </div>
+      <div class="w-[46px] h-[46px] flex items-center justify-center cursor-pointer">
+        <img src="img/icons/icon-search.svg" width="32" height="32" alt="">
+      </div>
+    </div>
+  </nav>
+  <div class="flex items-center justify-between h-8 px-3 border-t border-stroke-subtle text-xs">
+    <div class="flex items-center gap-1 text-ink-weak">
+      <img src="img/icons/icon-chevron-left.svg" width="14" height="14" alt="">
+      Startseite
+    </div>
+    <div class="flex items-center gap-1 text-link">
+      <img src="img/icons/icon-leaf.svg" width="20" height="20" alt="">
+      Wir sind nachhaltig
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════ SUB-NAVIGATION (sticky) ═════════════════════ -->
+<div id="subnav-sentinel" class="h-px"></div>
+<nav id="subnav" class="sticky top-0 z-20 flex gap-4 px-3 bg-white transition-shadow" aria-label="Abschnittsnavigation">
+  <a href="#ueberblick" data-subnav-link class="py-2 border-b-[3px] border-link font-semibold text-sm text-ink">Überblick</a>
+  <a href="#angebote" data-subnav-link class="py-2 border-b-[3px] border-transparent font-semibold text-sm text-ink">Angebote</a>
+  <a href="#fazit" data-subnav-link class="py-2 border-b-[3px] border-transparent font-semibold text-sm text-ink">Fazit</a>
+  <a href="#datenblatt" data-subnav-link class="py-2 border-b-[3px] border-transparent font-semibold text-sm text-ink">Datenblatt</a>
+</nav>
+
+<!-- ═══════════════════════════════════════ ÜBERBLICK ═══════════════════════════════════ -->
+<section id="ueberblick" class="px-3 py-4">
+
+  <!-- Photo carousel -->
+  <div class="w-full h-[198px] rounded-md bg-surface-100 overflow-hidden flex flex-col">
+    <div class="relative flex-1 min-h-0">
+      <div id="gallery-track" class="cursor-grab flex h-full overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-2" data-gallery-slide>
+          <img src="img/product/product-1.png" alt="Philips Series 5000 CX5535/11" class="max-h-full max-w-full object-contain cursor-zoom-in" data-gallery-open>
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-2" data-gallery-slide>
+          <img src="img/product/product-2.png" alt="Philips Series 5000 CX5535/11 im Einsatz" class="max-h-full max-w-full object-contain cursor-zoom-in" data-gallery-open>
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-2" data-gallery-slide>
+          <img src="img/product/product-3.png" alt="Philips Series 5000 CX5535/11 Bedienfeld" class="max-h-full max-w-full object-contain cursor-zoom-in" data-gallery-open>
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-2" data-gallery-slide>
+          <img src="img/product/product-4.png" alt="Philips Series 5000 CX5535/11 Fernbedienung" class="max-h-full max-w-full object-contain cursor-zoom-in" data-gallery-open>
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-2" data-gallery-slide>
+          <img src="img/product/product-5.png" alt="Philips Series 5000 CX5535/11 Aroma-Diffusor" class="max-h-full max-w-full object-contain cursor-zoom-in" data-gallery-open>
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-2" data-gallery-slide>
+          <img src="img/product/product-6.png" alt="Philips Series 5000 CX5535/11 mit Fernbedienung" class="max-h-full max-w-full object-contain cursor-zoom-in" data-gallery-open>
+        </div>
+      </div>
+
+      <button type="button" data-gallery-open class="absolute bottom-0 left-2 w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-hero" aria-label="Bilder vergrößern">
+        <img src="img/icons/icon-zoom-plus.svg" width="24" height="24" alt="">
+      </button>
+      <button type="button" class="absolute top-2 right-2 w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-hero" aria-label="Zum Vergleich hinzufügen">
+        <img src="img/icons/icon-heart-primary.svg" width="20" height="20" alt="">
+      </button>
+    </div>
+
+    <div class="shrink-0 flex justify-center gap-2 items-center pb-2" data-gallery-dots></div>
+  </div>
+
+  <!-- Title + micro datasheet -->
+  <h1 class="font-display font-normal text-[20px] leading-[1.2] text-ink mt-4">Philips Series 5000 CX5535/11</h1>
+  <p class="text-sm text-ink mt-2 leading-[1.4]">Schwarz&nbsp;•&nbsp;40 Watt&nbsp;•&nbsp;46 dB Betriebsgeräusch&nbsp;•&nbsp;Luftumwälzung 2.230 m³/h</p>
+
+  <!-- Rating & claim -->
+  <div class="relative h-[88px] flex items-center mt-4">
+    <div class="absolute left-[8px] top-0 w-[72px] h-[88px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-1">
+      <div class="text-[13px] font-medium text-ink">gut</div>
+      <div class="relative w-[54px] h-[52px] shrink-0">
+        <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+        <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[22px]">2,1</span>
+      </div>
+    </div>
+    <div class="w-full min-h-[58px] min-w-0 bg-surface-100 rounded pl-[88px] pr-3 py-2 flex flex-col justify-center gap-1">
+      <p class="text-sm text-ink leading-[1.2]">Frische Brise und angenehmer Duft – Komfort für jedes Zuhause</p>
+      <a href="#" class="text-sm text-link leading-[1.3]">Vollständiges Fazit lesen</a>
+    </div>
+  </div>
+
+  <!-- Offers -->
+  <div class="flex gap-2 items-start mt-4">
+    <div class="relative flex-1 pt-[10px]">
+      <div class="h-[100px] border-2 border-link rounded-md flex flex-col items-center justify-center gap-[3px] py-1.5 px-1.5">
+        <img src="img/logos/logo-alza.png" alt="alza.de" class="h-[26px] object-contain">
+        <div class="inline-flex flex-col items-center">
+          <span class="text-link text-xl font-medium">109,90&nbsp;€</span>
+          <span class="h-1 w-full rounded-full bg-gradient-to-r from-[#65f9ab] to-[#7dd3fc] mt-0.5"></span>
+        </div>
+        <div class="text-[11px] text-ink-weak">Versand: 5,49&nbsp;€</div>
+      </div>
+      <div class="absolute left-1/2 -translate-x-1/2 top-0">
+        <span class="inline-block bg-link text-white text-xs px-3 py-0.5 rounded-[10px] whitespace-nowrap">Bester Preis</span>
+      </div>
+    </div>
+    <div class="flex-1 h-[100px] mt-[10px] border border-stroke rounded-md flex flex-col items-center justify-center gap-[3px] py-1.5 px-1">
+      <img src="img/logos/logo-ebay.png" alt="eBay" class="h-[26px] object-contain">
+      <div class="inline-flex flex-col items-center">
+        <span class="text-link text-xl font-medium">118,64&nbsp;€</span>
+        <span class="h-1 w-full rounded-full bg-gradient-to-r from-[#65f9ab] to-[#7dd3fc] mt-0.5"></span>
+      </div>
+      <div class="text-[11px] text-ink-weak">Versand: 20,00&nbsp;€</div>
+    </div>
+    <div class="flex-1 h-[100px] mt-[10px] border border-stroke rounded-md flex flex-col items-center justify-center gap-[3px] py-1.5 px-1">
+      <img src="img/logos/logo-amazon.png" alt="Amazon.de" class="h-[26px] object-contain">
+      <div class="inline-flex flex-col items-center">
+        <span class="text-link text-xl font-medium">119,95&nbsp;€</span>
+        <span class="h-1 w-full rounded-full bg-gradient-to-r from-[#65f9ab] to-[#7dd3fc] mt-0.5"></span>
+      </div>
+      <div class="text-[11px] text-ink-weak">Versand: 0,00&nbsp;€</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <button type="button" id="cta-alle-angebote" class="w-full h-10 mt-4 rounded-md bg-secondary text-white text-[18px] font-medium">Alle Angeboten anzeigen</button>
+
+  <!-- Zusammenfassung: Stärken & Schwächen -->
+  <div class="mt-4 flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <p class="text-sm font-medium text-ink">Stärken</p>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Rotorloses Design bietet erhöhte Sicherheit</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Fernbedienung sorgt für Bedienkomfort</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Aroma-Diffuser-Funktion bringt angenehmen Raumduft</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Timer und Nachtmodus erhöhen Flexibilität</span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <p class="text-sm font-medium text-ink">Schwächen</p>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Kein Eco-Modus für energiesparenden Betrieb</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Nicht höhenverstellbar</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Keine App-Anbindung</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Keine Luftreinigung oder -befeuchtung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ ANGEBOTE ═══════════════════════════════════ -->
+<section id="angebote" class="bg-white px-3 pt-4 pb-2">
+  <div class="flex flex-col gap-0 mb-3">
+    <div class="font-display text-[20px] leading-[1.2] text-ink">Preisvergleich</div>
+    <div class="font-display text-base leading-[1.2] text-ink">4 Angebote ab 109,90 € bis 129,00 €</div>
+  </div>
+
+  <div class="border border-stroke rounded-[6px] overflow-hidden flex flex-col">
+    <div class="bg-surface-200 flex items-center justify-end px-2 py-3">
+      <button type="button" id="price-sort-toggle" class="flex items-center gap-1.5 px-2 py-1 rounded-md text-ink text-[13px]">
+        <svg id="price-sort-icon" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="16" rx="8" fill="#4D6C89"/><circle cx="8" cy="8" r="6" fill="white"/>
+        </svg>
+        <span>Preis inkl. Versand</span>
+      </button>
+    </div>
+    <div id="offer-list"></div>
+  </div>
+
+  <div class="border border-stroke rounded-[4px] flex gap-2 items-start px-2 py-2 mt-3">
+    <img src="img/icons/tb-icon-cart.svg" width="20" height="20" alt="" class="shrink-0 mt-0.5">
+    <p class="text-[12px] text-ink leading-[1.4]">Wir arbeiten unabhängig und neutral. Wenn Sie über diese Links einkaufen, erhalten wir ggf. eine Provision – für Sie entstehen keine Mehrkosten. <a href="#" class="text-link">Mehr erfahren</a></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ PREISENTWICKLUNG ═══════════════════════════════ -->
+<section id="preisentwicklung" class="bg-white px-3 py-4">
+  <div class="font-display text-[20px] leading-[1.2] text-ink mb-1">Preisentwicklung</div>
+  <div class="text-xs text-ink-weak leading-[1.5] mb-3.5">Preisentwicklung der letzten 90 Tage.<br>Gebrauchtangebote nicht enthalten.</div>
+
+  <div class="rounded-[6px] overflow-hidden">
+    <div class="flex gap-1 pl-1 pr-2 pt-2 pb-2" style="height:166px;">
+      <div id="pe-y-labels" class="relative shrink-0 text-[11px] text-ink-weak" style="width:34px;"></div>
+      <div class="flex-1 relative min-w-0" id="pe-container">
+        <svg id="pe-svg" viewBox="0 0 300 145" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
+          <defs>
+            <linearGradient id="pe-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0066CC" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#0066CC" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path id="pe-area" fill="url(#pe-gradient)" stroke="none"></path>
+          <path id="pe-line" fill="none" stroke="#0066CC" stroke-width="2"></path>
+          <circle id="pe-dot" r="3.5" fill="#0066CC" stroke="white" stroke-width="1.5" style="display:none;"></circle>
+        </svg>
+        <div id="pe-tooltip" class="absolute pointer-events-none bg-ink text-white text-[11px] rounded px-2 py-1 whitespace-nowrap -translate-x-1/2 -translate-y-[130%]" style="display:none;"></div>
+        <div id="pe-overlay" class="absolute inset-0" style="cursor:crosshair;touch-action:none;"></div>
+      </div>
+    </div>
+    <div class="flex justify-between text-[11px] text-ink-weak pl-[38px] pr-1">
+      <span>01.04</span><span>15.06</span><span>09.07</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FAZIT ═══════════════════════════════════════ -->
+<section id="fazit" class="bg-white px-3 py-4">
+  <p class="text-sm text-ink leading-[1.33] mb-2">Unser Fazit zum Philips Series 5000 CX5535/11</p>
+  <h2 class="font-display text-[20px] leading-[1.2] text-ink mb-4">Ein gutes Highend-Gerät – der Umstieg lohnt jedoch kaum</h2>
+
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <p class="text-sm font-medium text-ink">Stärken:</p>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Rotorloser Turmventilator mit 3 Windstufen</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Fernbedienung sorgt für Bedienkomfort</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Aroma-Diffuser-Funktion bringt angenehmen Raumduft</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-plus-circle.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Timer und Nachtmodus erhöhen Flexibilität</span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <p class="text-sm font-medium text-ink">Schwächen:</p>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Kein Eco-Modus für energiesparenden Betrieb</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Nicht höhenverstellbar</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Keine App-Anbindung</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <img src="img/icons/icon-minus-circle-orange.svg" width="18" height="18" alt="" class="shrink-0 mt-0.5">
+        <span class="text-sm text-ink leading-[1.4]">Keine Luftreinigung oder -befeuchtung</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-sm text-ink leading-[1.4] mt-4">Der Philips Turmventilator 5000 Series CX5535 bietet drei Windstufen, eine angenehme Lautstärke und einige Komfortfunktionen wie Fernbedienung, Timer sowie einen Nacht- und Naturmodus. Er arbeitet rotorlos und ist mit seiner Höhe von 105 cm für mittelgroße Räume geeignet. Die Aroma-Diffuser-Funktion hebt ihn im direkten Vergleich positiv hervor. Die Verarbeitung aus Kunststoff ist solide. Das Gerät eignet sich besonders für Nutzer, die Wert auf Komfort und angenehmen Raumduft legen. Es fehlen jedoch App-Anbindung, Eco-Modus und Luftbefeuchtung, was die Zielgruppe auf Nutzer mit klassischen Anforderungen begrenzt.</p>
+
+  <button type="button" id="cta-datenblatt" class="w-full h-10 mt-4 rounded-md border border-ink-muted text-ink text-sm font-medium bg-white">Datenblatt ansehen</button>
+</section>
+
+<!-- ═══════════════════════════════════════ PASSENDE ALTERNATIVEN ═══════════════════════ -->
+<section class="bg-surface-100 px-3 py-4">
+  <h2 class="font-display text-[20px] leading-[1.2] text-ink mb-3">Passende Alternativen</h2>
+  <div data-carousel>
+   <div class="relative">
+    <div data-carousel-track class="flex gap-4 overflow-x-auto snap-x snap-mandatory cursor-grab [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/products/alt-1-tzs.png" alt="TZS First Austria Turmventilator mit Wasserkühlung" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">2,1</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">TZS First Austria Turmventilator mit Wasserkühlung</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">129,95&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">8</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/products/alt-2-rowenta.png" alt="Rowenta Turbo Silence Extreme Standventilator" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">1,5</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">Rowenta Turbo Silence Extreme Standventilator</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">306,34&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">11</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/products/alt-3-philips-cx3550.png" alt="Philips Standventilator CX3550/01 Serie 3000" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">2,3</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">Philips Standventilator CX3550/01 Serie 3000</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">99,99&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">9</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button type="button" data-carousel-next class="absolute top-[102px] right-1 w-11 h-11 rounded-full bg-white/85 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.35)] flex items-center justify-center transition-opacity" aria-label="Weiter">
+      <img src="img/icons/icon-arrow-right-carousel.svg" width="16" height="16" alt="">
+    </button>
+   </div>
+   <div class="flex justify-center gap-2 mt-3" data-carousel-dots></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ DATENBLATT ═══════════════════════════════════ -->
+<section id="datenblatt" class="bg-surface-100 px-3 py-4">
+  <h2 class="font-display text-[20px] leading-[1.2] text-ink mb-2">Datenblatt</h2>
+
+  <div class="relative rounded-md overflow-hidden bg-white">
+    <div id="datasheet-body" class="overflow-hidden" style="max-height:250px;transition:max-height 0.4s ease;">
+      <table class="w-full border-collapse">
+        <tbody>
+          <tr><th colspan="2" class="text-left text-sm font-bold text-ink bg-surface-200 px-2 h-9">Design</th></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Produktfarbe</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Schwarz</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Steuerung</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Berührung</td></tr>
+
+          <tr><th colspan="2" class="text-left text-sm font-bold text-ink bg-surface-200 px-2 h-9">Gewicht und Abmessungen</th></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Breite</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">310 mm</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Gewicht</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">4,5 kg</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Höhe</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">1048 mm</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Paketgewicht</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">6,1 kg</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Tiefe</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">310 mm</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Verpackungsbreite</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">238 mm</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Verpackungshöhe</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">1095 mm</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Verpackungstiefe</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">238 mm</td></tr>
+
+          <tr><th colspan="2" class="text-left text-sm font-bold text-ink bg-surface-200 px-2 h-9">Technische Details</th></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Anzahl Geschwindigkeiten</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">3</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Fernbedienung</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Ja</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Geräuschpegel</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">46 dB</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Kabellänge</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">1,8 m</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Kindersicherung</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Ja</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Zusatzfunktion</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Aroma-Diffusor</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Komfort-Schlafmodus</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Ja</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Luftstrom (hohe Geschwindigkeit)</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">2230 m³/h</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Pendelwinkel</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">60°</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Schwingung</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Ja</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Timer</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Ja</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Timer-Typ</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Digital</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Typ</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">Turmventilator</td></tr>
+
+          <tr><th colspan="2" class="text-left text-sm font-bold text-ink bg-surface-200 px-2 h-9">Energie</th></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">AC Eingangsspannung</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">220 - 240 V</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Energieverbrauch (Kühlung)</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">40 W</td></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top w-[48%]">Stromverbrauch (Standby)</td><td class="text-sm text-ink px-2 py-2 border-b border-stroke-subtle align-top">0,2 W</td></tr>
+
+          <tr><th colspan="2" class="text-left text-sm font-bold text-ink bg-surface-200 px-2 h-9">Lieferumfang</th></tr>
+          <tr><td class="text-sm text-ink px-2 py-2 align-top w-[48%]">Fernbedienung enthalten</td><td class="text-sm text-ink px-2 py-2 align-top">Ja</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="datasheet-fade" class="pointer-events-none absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-b from-transparent to-white"></div>
+  </div>
+
+  <button type="button" id="datasheet-btn" class="flex items-center justify-center w-full h-10 mt-3 rounded-md border border-ink-muted text-sm font-medium text-ink bg-white">Mehr anzeigen</button>
+
+  <p class="text-xs text-ink leading-[1.33] mt-3">Weiterführende Informationen zum Thema Philips Series 5000 CX5535/11 können Sie direkt beim Hersteller unter <a href="#" class="text-link">philips.de</a> finden.</p>
+</section>
+
+<!-- ═══════════════════════════════════════ PASSENDE BESTENLISTEN ═══════════════════════ -->
+<section class="bg-surface-100 px-3 py-4">
+  <h2 class="font-display text-[20px] leading-[1.2] text-ink mb-3">Passende Bestenlisten</h2>
+  <div data-carousel>
+   <div class="relative">
+    <div data-carousel-track class="flex gap-4 overflow-x-auto snap-x snap-mandatory cursor-grab [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+      <a href="#" class="snap-start shrink-0 flex flex-col items-center gap-2 w-[180px]">
+        <div class="relative w-[180px] h-[170px] flex items-center justify-center overflow-clip">
+          <img src="img/icons/category-blob-shape.svg" alt="" class="absolute w-[168px] h-[165px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img src="img/categories/ventilatoren.png" alt="Ventilatoren" class="relative w-[106px] h-[106px] object-cover">
+        </div>
+        <span class="text-sm font-medium text-link text-center">Ventilatoren</span>
+      </a>
+
+      <a href="#" class="snap-start shrink-0 flex flex-col items-center gap-2 w-[180px]">
+        <div class="relative w-[180px] h-[170px] flex items-center justify-center overflow-clip">
+          <img src="img/icons/category-blob-shape.svg" alt="" class="absolute w-[168px] h-[165px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img src="img/categories/turmventilatoren.png" alt="Turmventilatoren" class="relative w-[106px] h-[106px] object-cover">
+        </div>
+        <span class="text-sm font-medium text-link text-center">Turmventilatoren</span>
+      </a>
+
+      <a href="#" class="snap-start shrink-0 flex flex-col items-center gap-2 w-[180px]">
+        <div class="relative w-[180px] h-[170px] flex items-center justify-center overflow-clip">
+          <img src="img/icons/category-blob-shape.svg" alt="" class="absolute w-[168px] h-[165px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img src="img/categories/mini-klimaanlagen.png" alt="Mini-Klimaanlagen" class="relative w-[106px] h-[106px] object-cover">
+        </div>
+        <span class="text-sm font-medium text-link text-center">Mini-Klimaanlagen</span>
+      </a>
+
+    </div>
+    <button type="button" data-carousel-next class="absolute top-[63px] right-1 w-11 h-11 rounded-full bg-white/85 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.35)] flex items-center justify-center transition-opacity" aria-label="Weiter">
+      <img src="img/icons/icon-arrow-right-carousel.svg" width="16" height="16" alt="">
+    </button>
+   </div>
+   <div class="flex justify-center gap-2 mt-3" data-carousel-dots></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ AKTUELL BELIEBT ═════════════════════════════ -->
+<section class="bg-surface-100 px-3 py-4">
+  <h2 class="font-display text-[20px] leading-[1.2] text-ink mb-3">Aktuell beliebt</h2>
+  <div data-carousel>
+   <div class="relative">
+    <div data-carousel-track class="flex gap-4 overflow-x-auto snap-x snap-mandatory cursor-grab [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/products/pop-1-dyson.png" alt="DYSON Turmventilator AM07" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">1,7</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">DYSON Turmventilator AM07</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">445,99&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">60</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/products/pop-2-meaco.png" alt="Meaco Fan 1056P Standventilator weiß" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">1,8</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">Meaco Fan 1056P Standventilator weiß</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">177,90&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">37</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/product/product-1.png" alt="Philips Oszillierender Turmventilator 5000 Serie" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">2,0</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">Philips Oszillierender Turmventilator 5000 Serie</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">109,90&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">1</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white snap-start shrink-0 w-[200px] border border-stroke rounded-lg flex flex-col pb-2">
+        <div class="relative h-[140px] rounded-t-lg bg-surface-100 flex items-center justify-center p-2">
+          <img src="img/products/pop-4-shark.png" alt="Shark FlexBreeze Ventilator" class="max-h-[112px] max-w-full object-contain mix-blend-multiply pointer-events-none">
+          <div class="absolute bottom-1 right-1 w-[50px] h-[61px] bg-white border border-stroke rounded-lg flex flex-col items-center justify-center gap-0.5">
+            <span class="text-[9px] font-medium text-ink">gut</span>
+            <div class="relative w-[38px] h-[36px] shrink-0 -translate-y-[3px]">
+              <img src="img/icons/rating-badge-bg.svg" alt="" class="absolute inset-0 w-full h-full">
+              <span class="absolute inset-0 flex items-center justify-center text-white font-display font-medium text-[15px]">2,1</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between flex-1 px-2 pt-2 gap-3">
+          <p class="text-sm font-medium text-link leading-[1.4] line-clamp-2">Shark FlexBreeze Ventilator</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-ink"><span class="text-xs">ab</span> <span class="text-xl font-semibold">199,99&nbsp;€</span></p>
+            <div class="flex items-center gap-1">
+              <span class="bg-link text-white text-xs font-bold min-w-[22px] px-1.5 py-0.5 rounded-full text-center">41</span>
+              <span class="text-xs text-ink">Angebote vergleichen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button type="button" data-carousel-next class="absolute top-[102px] right-1 w-11 h-11 rounded-full bg-white/85 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.35)] flex items-center justify-center transition-opacity" aria-label="Weiter">
+      <img src="img/icons/icon-arrow-right-carousel.svg" width="16" height="16" alt="">
+    </button>
+   </div>
+   <div class="flex justify-center gap-2 mt-3" data-carousel-dots></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ AUS UNSEREM MAGAZIN ═════════════════════════ -->
+<section class="bg-surface-100 px-3 py-4">
+  <h2 class="text-lg text-ink leading-[1.2] mb-3">Aus unserem Magazin</h2>
+  <div class="flex flex-col gap-4">
+    <a href="#" class="flex bg-white border border-stroke rounded-lg overflow-hidden">
+      <img src="img/magazin/teaser-1-klimaanlage.png" alt="" class="w-[120px] self-stretch shrink-0 object-cover block">
+      <div class="flex flex-col justify-center gap-1 px-3 py-2">
+        <span class="text-xs text-ink-weak">Produkte</span>
+        <span class="text-sm font-medium text-link leading-[1.3]">Klimaanlage für zu Hause - welche kühlt am günstigsten?</span>
+      </div>
+    </a>
+    <a href="#" class="flex bg-white border border-stroke rounded-lg overflow-hidden">
+      <img src="img/magazin/teaser-2-sauna.png" alt="" class="w-[120px] self-stretch shrink-0 object-cover block">
+      <div class="flex flex-col justify-center gap-1 px-3 py-2">
+        <span class="text-xs text-ink-weak">Produkte</span>
+        <span class="text-sm font-medium text-link leading-[1.3]">Bye bye, Sauna: Welche Klimageräte kühlen am besten?</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ PHOTO OVERLAY ═══════════════════════════════ -->
+<div id="gallery-overlay" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center py-4">
+ <div id="gallery-overlay-panel" class="w-[calc(100%-32px)] max-w-[468px] max-h-full overflow-y-auto bg-white rounded-lg">
+
+  <div class="flex items-center justify-between gap-3 px-4 py-4 border-b border-stroke-subtle">
+    <h2 class="font-display font-normal text-xl leading-[1.2] text-ink">Philips Series 5000 CX5535/11</h2>
+    <button type="button" id="gallery-overlay-close" class="shrink-0 w-11 h-11 rounded-full bg-surface-100 flex items-center justify-center text-ink text-xl" aria-label="Schließen">✕</button>
+  </div>
+
+  <div class="p-3">
+    <div class="relative w-full h-[340px] rounded-md bg-surface-100 overflow-hidden">
+      <div id="gallery-overlay-track" class="cursor-grab flex h-full overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4" data-overlay-slide>
+          <img src="img/product/product-1.png" alt="Philips Series 5000 CX5535/11" class="max-h-full max-w-full object-contain pointer-events-none">
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4" data-overlay-slide>
+          <img src="img/product/product-2.png" alt="Philips Series 5000 CX5535/11 im Einsatz" class="max-h-full max-w-full object-contain pointer-events-none">
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4" data-overlay-slide>
+          <img src="img/product/product-3.png" alt="Philips Series 5000 CX5535/11 Bedienfeld" class="max-h-full max-w-full object-contain pointer-events-none">
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4" data-overlay-slide>
+          <img src="img/product/product-4.png" alt="Philips Series 5000 CX5535/11 Fernbedienung" class="max-h-full max-w-full object-contain pointer-events-none">
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4" data-overlay-slide>
+          <img src="img/product/product-5.png" alt="Philips Series 5000 CX5535/11 Aroma-Diffusor" class="max-h-full max-w-full object-contain pointer-events-none">
+        </div>
+        <div class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4" data-overlay-slide>
+          <img src="img/product/product-6.png" alt="Philips Series 5000 CX5535/11 mit Fernbedienung" class="max-h-full max-w-full object-contain pointer-events-none">
+        </div>
+      </div>
+    </div>
+
+    <!-- Thumbnails -->
+    <div id="gallery-overlay-thumbs" class="flex gap-2 mt-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+
+    <hr class="border-stroke-subtle my-4">
+
+    <!-- Offers -->
+    <div class="flex gap-2 items-start">
+      <div class="relative flex-1 pt-[10px]">
+        <div class="h-[100px] border-2 border-link rounded-md flex flex-col items-center justify-center gap-[3px] py-1.5 px-1.5">
+          <img src="img/logos/logo-alza.png" alt="alza.de" class="h-[26px] object-contain">
+          <div class="inline-flex flex-col items-center">
+            <span class="text-link text-xl font-medium">109,90&nbsp;€</span>
+            <span class="h-1 w-full rounded-full bg-gradient-to-r from-[#65f9ab] to-[#7dd3fc] mt-0.5"></span>
+          </div>
+          <div class="text-[11px] text-ink-weak">Versand: 5,49&nbsp;€</div>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 top-0">
+          <span class="inline-block bg-link text-white text-xs px-3 py-0.5 rounded-[10px] whitespace-nowrap">Bester Preis</span>
+        </div>
+      </div>
+      <div class="flex-1 h-[100px] mt-[10px] border border-stroke rounded-md flex flex-col items-center justify-center gap-[3px] py-1.5 px-1">
+        <img src="img/logos/logo-ebay.png" alt="eBay" class="h-[26px] object-contain">
+        <div class="inline-flex flex-col items-center">
+          <span class="text-link text-xl font-medium">118,64&nbsp;€</span>
+          <span class="h-1 w-full rounded-full bg-gradient-to-r from-[#65f9ab] to-[#7dd3fc] mt-0.5"></span>
+        </div>
+        <div class="text-[11px] text-ink-weak">Versand: 20,00&nbsp;€</div>
+      </div>
+      <div class="flex-1 h-[100px] mt-[10px] border border-stroke rounded-md flex flex-col items-center justify-center gap-[3px] py-1.5 px-1">
+        <img src="img/logos/logo-amazon.png" alt="Amazon.de" class="h-[26px] object-contain">
+        <div class="inline-flex flex-col items-center">
+          <span class="text-link text-xl font-medium">119,95&nbsp;€</span>
+          <span class="h-1 w-full rounded-full bg-gradient-to-r from-[#65f9ab] to-[#7dd3fc] mt-0.5"></span>
+        </div>
+        <div class="text-[11px] text-ink-weak">Versand: 0,00&nbsp;€</div>
+      </div>
+    </div>
+
+    <button type="button" id="gallery-overlay-cta" class="w-full h-10 mt-4 rounded-md bg-secondary text-white text-[18px] font-medium">Alle Angeboten anzeigen</button>
+  </div>
+ </div>
+</div>
+
+<!-- ═══════════════════════════════════════ OFFER DETAILS (bottom sheet) ═══════════════════ -->
+<div id="offer-details-backdrop" class="fixed inset-0 z-40 bg-[rgba(16,42,67,0.9)] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<div id="offer-details-panel" class="fixed left-[15px] right-[15px] bottom-0 z-50 mx-auto max-w-[468px] max-h-[80vh] bg-white rounded-t-lg translate-y-full transition-transform duration-300 flex flex-col">
+  <div class="flex items-center justify-between gap-3 px-4 py-3 border-b border-stroke-subtle shrink-0">
+    <h3 id="od-title" class="font-display text-base leading-[1.2] text-ink"></h3>
+    <button type="button" id="offer-details-close" class="shrink-0 w-9 h-9 rounded-full bg-surface-100 flex items-center justify-center text-ink" aria-label="Schließen">
+      <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <p id="od-desc" class="px-4 py-3 text-sm text-ink leading-[1.4] overflow-y-auto"></p>
+
+  <div class="flex items-center gap-2 px-4 py-3 border-t border-stroke-subtle shrink-0">
+    <img id="od-thumb" src="" alt="" class="w-10 h-10 object-contain shrink-0">
+    <img id="od-logo" src="" alt="" class="h-5 object-contain object-left flex-1 min-w-0">
+    <div class="flex flex-col items-end shrink-0 text-right">
+      <span id="od-price" class="text-base font-semibold text-ink whitespace-nowrap"></span>
+      <span id="od-shipping" class="text-[11px] text-ink-weak whitespace-nowrap"></span>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-1 px-4 pb-4 text-xs text-ink shrink-0">
+    <img id="od-truck" src="" width="16" height="16" alt="">
+    <span id="od-delivery"></span>
+  </div>
+
+  <div class="px-4 pb-4 shrink-0">
+    <button type="button" id="od-shop-cta" class="w-full h-10 rounded-md bg-secondary text-white text-sm font-medium">zum Shop</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<footer>
+
+  <!-- Disclaimer block -->
+  <div class="bg-surface-100 px-[22px] py-[32px] flex flex-col gap-[16px] affiliate-wrapper">
+
+    <!-- Affiliate notice -->
+    <div class="flex gap-[4px] items-start">
+      <div class="relative shrink-0 size-[24px] mt-px">
+        <img src="img/icons/tb-icon-cart.svg" alt="" class="absolute inset-0 size-full object-cover">
+        <div class="absolute inset-0 bg-[#3c5c7b] mix-blend-lighten"></div>
+      </div>
+      <p class="text-[14px] text-ink-weak leading-[1.4]">
+        Wir arbeiten unabhängig und neutral. Klicken Sie auf ein verlinktes Shop-Angebot, unterstützen Sie uns dabei. Wir erhalten dann ggf. eine Vergütung.
+        <br/><a href="#" class="text-link">Erfahren Sie, wie sich Testberichte finanziert</a>
+      </p>
+    </div>
+
+    <!-- Price disclaimer -->
+    <div class="flex gap-[8px] items-start pl-[12px]">
+      <p class="text-[18px] text-primary font-bold shrink-0 not-italic" style="font-family:'Times New Roman',serif;">*</p>
+      <div class="flex flex-col gap-[4px]">
+        <p class="text-[14px] text-ink-weak leading-[1.4]">
+          Alle Preise verstehen sich inkl. gesetzlicher MwSt. Die Versandkosten hängen von der gewählten Versandart ab, es handelt sich um Mindestkosten. Die Angebotsinformationen basieren auf den Angaben des jeweiligen Shops und werden über automatisierte Prozesse aktualisiert. Eine Aktualisierung in Echtzeit findet nicht statt, so dass der Preis seit der letzten Aktualisierung gestiegen sein kann. Maßgeblich ist der tatsächliche Preis, den der Shop zum Zeitpunkt des Kaufs auf seiner Webseite anbietet.
+        </p>
+        <a href="#" class="text-[14px] font-medium text-link">Mehr Infos dazu in unseren FAQs</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Nav / logo block -->
+  <div class="bg-surface-200 px-[8px] py-[22px] footer-links">
+
+    <!-- Logo -->
+    <div class="mb-[19px]">
+      <img src="img/logo.svg" alt="Testberichte" width="170" height="24">
+    </div>
+
+    <!-- Social icons -->
+    <div class="flex gap-[7px] mb-[40px]">
+      <!-- Facebook -->
+      <div class="w-[32px] h-[32px] shrink-0 cursor-pointer">
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#3C5C7B"/>
+          <path d="M17.2 16.8H19l.4-2.4h-2.2v-1.2c0-.64.32-1.2 1.28-1.2H19.4V9.84S18.56 9.6 17.76 9.6c-2.16 0-3.36 1.28-3.36 3.6v1.2H12.4V16.8h2v6h2.8v-6z" fill="white"/>
+        </svg>
+      </div>
+      <!-- Instagram -->
+      <div class="w-[32px] h-[32px] shrink-0 cursor-pointer">
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#3C5C7B"/>
+          <rect x="10" y="10" width="12" height="12" rx="3.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="16" r="3" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="19.5" cy="12.5" r="0.75" fill="white"/>
+        </svg>
+      </div>
+      <!-- X / Twitter -->
+      <div class="w-[32px] h-[32px] shrink-0 cursor-pointer">
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#3C5C7B"/>
+          <path d="M10 10.5l4.8 6.4L10 22h1.5l3.6-4.2 3 4.2H22l-5-6.7 4.5-5.3H20l-3.3 3.8-2.8-3.8H10z" fill="white"/>
+        </svg>
+      </div>
+      <!-- Email -->
+      <div class="w-[32px] h-[32px] shrink-0 cursor-pointer">
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#3C5C7B"/>
+          <rect x="9" y="12" width="14" height="10" rx="1.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <path d="M9 13l7 5 7-5" stroke="white" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Nav links — group 1 -->
+    <div class="flex flex-col mb-[45px]">
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Über uns</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Presse</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Karriere</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Partnerbereich</span>
+    </div>
+
+    <!-- Nav links — group 2 -->
+    <div class="flex flex-col mb-[28px]">
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Testmagazine</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">FAQ</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Unser Magazin</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Feedback</span>
+      <span class="text-[16px] text-ink-weak leading-[32px] cursor-pointer">Kontakt</span>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px bg-stroke-bold mb-[13px]"></div>
+
+    <!-- Legal links -->
+    <div class="flex flex-wrap gap-y-0 mb-[12px]">
+      <span class="text-[16px] text-ink-weak leading-[40px] pr-4 cursor-pointer">Impressum</span>
+      <span class="text-[16px] text-ink-weak leading-[40px] pr-4 cursor-pointer">Datenschutzerklärung</span>
+      <span class="text-[16px] text-ink-weak leading-[40px] pr-4 cursor-pointer">Datenschutzeinstellungen</span>
+      <span class="text-[16px] text-ink-weak leading-[40px] pr-4 cursor-pointer">AGB</span>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-[16px] text-ink-weak leading-[22px]">© 2022 Producto GmbH</div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
